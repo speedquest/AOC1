@@ -16,6 +16,7 @@
 		A4176770158057EB006633AF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A417676F158057EB006633AF /* ViewController.m */; };
 		A4176773158057EB006633AF /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4176771158057EB006633AF /* ViewController_iPhone.xib */; };
 		A4176776158057EB006633AF /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4176774158057EB006633AF /* ViewController_iPad.xib */; };
+		A417677D1580608C006633AF /* F1_yard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A417677C1580608C006633AF /* F1_yard.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,16 +24,17 @@
 		A417675C158057EB006633AF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A417675E158057EB006633AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A4176760158057EB006633AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		A4176764158057EB006633AF /* AOC1_Week2_SingleView-Info.plist */ = {isa = PBXFileReference; path = "AOC1_Week2_SingleView-Info.plist"; sourceTree = "<group>"; };
+		A4176764158057EB006633AF /* AOC1_Week2_SingleView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AOC1_Week2_SingleView-Info.plist"; sourceTree = "<group>"; };
 		A4176766158057EB006633AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A4176768158057EB006633AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A417676A158057EB006633AF /* AOC1_Week2_SingleView-Prefix.pch */ = {isa = PBXFileReference; path = "AOC1_Week2_SingleView-Prefix.pch"; sourceTree = "<group>"; };
-		A417676B158057EB006633AF /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		A417676A158057EB006633AF /* AOC1_Week2_SingleView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AOC1_Week2_SingleView-Prefix.pch"; sourceTree = "<group>"; };
+		A417676B158057EB006633AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A417676C158057EB006633AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A417676E158057EB006633AF /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		A417676E158057EB006633AF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A417676F158057EB006633AF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A4176772158057EB006633AF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		A4176775158057EB006633AF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		A417677C1580608C006633AF /* F1_yard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = F1_yard.jpg; path = ../../../../../Desktop/F1_yard.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		A4176762158057EB006633AF /* AOC1_Week2_SingleView */ = {
 			isa = PBXGroup;
 			children = (
+				A417677C1580608C006633AF /* F1_yard.jpg */,
 				A417676B158057EB006633AF /* AppDelegate.h */,
 				A417676C158057EB006633AF /* AppDelegate.m */,
 				A417676E158057EB006633AF /* ViewController.h */,
@@ -155,6 +158,7 @@
 				A4176767158057EB006633AF /* InfoPlist.strings in Resources */,
 				A4176773158057EB006633AF /* ViewController_iPhone.xib in Resources */,
 				A4176776158057EB006633AF /* ViewController_iPad.xib in Resources */,
+				A417677D1580608C006633AF /* F1_yard.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

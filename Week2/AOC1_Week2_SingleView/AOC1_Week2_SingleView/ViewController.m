@@ -20,6 +20,16 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    UILabel *bookTitle = [[UILabel alloc] initWithFrame:CGRectMake(50, 50, 150, 37)];
+    
+    if (bookTitle != nil) {
+        bookTitle.text = @"The Go-Getter";
+    }
+    [self.view addSubview:bookTitle];
+                          
+}
 - (void)viewDidUnload
 {
     [super viewDidUnload];
