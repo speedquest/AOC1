@@ -24,7 +24,7 @@
     
     total = [[NSNumber alloc] initWithInt:addNumbers]; //  Capturing the return of the ADD function and placing it into a NSNUmber variable  REQUIREMENT #7A
     totalMessage = [NSString stringWithFormat:@"When %d and %d are added it equals: ", numberOne, numberTwo];  //  REQUIREMENT #7B
-    totalValueString = [total stringValue];      //  Convert the NSNumber to an NSString REQUIREMENT #
+    totalValueString = [total stringValue];      //  Convert the NSNumber to an NSString REQUIREMENT #7B
     addedNumbersString = [self append:totalMessage with:totalValueString];  //Calling the Append Function for the numbers converted to a string
     
     //  Appending the strings

@@ -15,20 +15,18 @@
     int addNumbers; // Variable to contain the combined integers
     int numberOne;  // Variable for integer Number 1
     int numberTwo;  // Variable for integer Number 2
-    NSNumber *total;
+    NSNumber *total;  //  Variable stroing the added value of the two Int numbers
     
     //  Strings  
     NSString *string1;  // String declaration for String 1
     NSString *string2;  // String declaration for String 2
     
     NSString *totalMessage;  // Addition message
-    NSString *totalValueString;
+    NSString *totalValueString;  //  NSString version of the added numbers
     NSString *addedNumbersString;  // The two numbers combined message
     NSString *compareYES;       //  Result if the two numbers are equal
     NSString *compareNO;        //  Result if the two numbers are NOT equal
-    NSString *theNewString;
-    NSString *compareValue;
-    NSString *compareString;
+    NSString *theNewString;     //  Combined String1 and String2 text
     
 }
 
