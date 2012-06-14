@@ -17,13 +17,25 @@
     int numberTwo;  // Variable for integer Number 2
     NSNumber *total;
     
-    NSString *addingMessage;  // Addition message
-    NSString *combinedString;
-    NSString *alertString;    
+    //  Strings  
+    NSString *string1;  // String declaration for String 1
+    NSString *string2;  // String declaration for String 2
+    
+    NSString *totalMessage;  // Addition message
+    NSString *totalValueString;
+    NSString *addedNumbersString;  // The two numbers combined message
+    NSString *compareYES;       //  Result if the two numbers are equal
+    NSString *compareNO;        //  Result if the two numbers are NOT equal
+    NSString *theNewString;
+    NSString *compareValue;
+    NSString *compareString;
+    
 }
 
 - (int) add:(int)number1 with:(int)number2;
 - (NSString*) append:(NSString*)str1 with:(NSString*)str2;
-- (void) displayAlertWithString:(NSString*)StringIN;
+- (void) displayAlertWithString:(NSString*)stringAlert;
+- (BOOL) compare:(int)number1 with:(int)number2;
+
 
 @end
