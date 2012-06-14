@@ -16,21 +16,45 @@
 
 - (void)viewDidLoad
 {
+    
+//  Numbers & Addition    
+    numberOne = 10;
+    numberTwo = 27;
+    addNumbers = [self add:numberOne with:numberTwo];  //  Calling the ADD function and passing in (2) integer values
+    
+    total = [[NSNumber alloc] initWithInt:addNumbers];
+    addingMessage = [NSString stringWithFormat:@"When added: %d and %d equals ", numberOne, numberTwo];
+    combinedString = [total stringValue];
+    alertString = [self append:addingMessage with:combinedString];  //Calling the Append Function to create the appended message
+    [self displayAlertWithString:alertString];
+    
+    
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+
+//  Addition Function
+- (int)add:(int)number1 with:(int)number2{
+    return number1 + number2;
+}
+
+
+// Append Function
+-(NSString *)append:(NSString*)str1 with:(NSString*)str2{
+    NSMutableString *appendedString = [NSMutableString stringWithString:str1];
+    NSString *string = [appendedString stringByAppendingString:str2];
+    return string;
+}
+
 -(void)viewDidAppear:(BOOL)animated
 {
-    //  ADD Function
     
-    //  COMPARE Function
-    
-    //  APPEND Function
     
     //  DisplayAlertWithStrings Function
     
-    //  Calling the ADD function and passing in (2) integer values
+    
     
     //  Capturing the return of the ADD function and placing it into a variable
     
