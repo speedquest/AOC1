@@ -20,6 +20,7 @@
     UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];  //  Establishing the button style
     if (loginButton != nil)  // Checking that the button exists
     {
+        loginButton.tag = 0;
         loginButton.frame = CGRectMake(190.0f, 70.0f, 100.0f, 30.0f);  //  Locating the button and sizing it
         loginButton.tintColor = [UIColor colorWithRed:0.451 green:0.635 blue:0.357 alpha:1]; /*#73a25b*/  //Changes the button color while depressed
         [loginButton setTitle:@"Login" forState:UIControlStateNormal];  //  The NORMAL state of the button
@@ -31,6 +32,7 @@
     UIButton *dateButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     if (dateButton != nil)
     {
+        dateButton.tag = 1;
         dateButton.frame = CGRectMake(10.0f, 170.0f, 100.0f, 40.0f);
         dateButton.tintColor = [UIColor colorWithRed:0.451 green:0.635 blue:0.357 alpha:1]; /*#73a25b*/
         [dateButton setTitle:@"Date" forState:UIControlStateNormal];
@@ -41,6 +43,7 @@
     UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
     if (infoButton != nil)
     {
+        infoButton.tag = 2;
         //  infoButton.backgroundColor = [UIColor whiteColor];
         infoButton.frame = CGRectMake(10.0f, 350.0f, 25.0f, 25.0f);
         infoButton.tintColor = [UIColor colorWithRed:0.451 green:0.635 blue:0.357 alpha:1]; /*#73a25b*/
@@ -65,15 +68,30 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
--(void)onClick
+-(void)onClick:(UIButton*)button
+
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"OUCH!" message:@"The BUTTON works!" delegate:nil cancelButtonTitle:@"DONE" otherButtonTitles:nil];
+    if (button.tag == 0)
+    {    
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"OUCH!" message:@"The LOGIN BUTTON works!" delegate:nil cancelButtonTitle:@"DONE" otherButtonTitles:nil];
     
-    if (alertView != nil)
+        if (alertView != nil)
+        {
+            [alertView show];
+        }
+}
+    else if (button.tag == 1)
     {
-        [alertView show];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Interesting!" message:@"The DATE BUTTON works!" delegate:nil cancelButtonTitle:@"DONE" otherButtonTitles:nil];
+        
+        if (alertView != nil)
+        {
+            [alertView show];
+        }
     }
 }
+
+
 - (void)viewDidUnload
 {
 
