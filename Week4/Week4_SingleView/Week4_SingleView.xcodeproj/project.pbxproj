@@ -16,6 +16,8 @@
 		A41D7ABA15902EAB004481D1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A41D7AB915902EAB004481D1 /* ViewController.m */; };
 		A41D7ABD15902EAB004481D1 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41D7ABB15902EAB004481D1 /* ViewController_iPhone.xib */; };
 		A41D7AC015902EAB004481D1 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41D7ABE15902EAB004481D1 /* ViewController_iPad.xib */; };
+		A4ADCB5F1591696E002B44D5 /* DIesel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A4ADCB5E1591696E002B44D5 /* DIesel.jpg */; };
+		A4ADCB6215916A35002B44D5 /* DieselDad.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A4ADCB6115916A35002B44D5 /* DieselDad.JPG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		A41D7AB915902EAB004481D1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A41D7ABC15902EAB004481D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		A41D7ABF15902EAB004481D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		A4ADCB5E1591696E002B44D5 /* DIesel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DIesel.jpg; sourceTree = "<group>"; };
+		A4ADCB6115916A35002B44D5 /* DieselDad.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DieselDad.JPG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 		A41D7AAC15902EAB004481D1 /* Week4_SingleView */ = {
 			isa = PBXGroup;
 			children = (
+				A4ADCB6115916A35002B44D5 /* DieselDad.JPG */,
+				A4ADCB5E1591696E002B44D5 /* DIesel.jpg */,
 				A41D7AB515902EAB004481D1 /* AppDelegate.h */,
 				A41D7AB615902EAB004481D1 /* AppDelegate.m */,
 				A41D7AB815902EAB004481D1 /* ViewController.h */,
@@ -155,6 +161,8 @@
 				A41D7AB115902EAB004481D1 /* InfoPlist.strings in Resources */,
 				A41D7ABD15902EAB004481D1 /* ViewController_iPhone.xib in Resources */,
 				A41D7AC015902EAB004481D1 /* ViewController_iPad.xib in Resources */,
+				A4ADCB5F1591696E002B44D5 /* DIesel.jpg in Resources */,
+				A4ADCB6215916A35002B44D5 /* DieselDad.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +295,7 @@
 				A41D7AC515902EAB004481D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
