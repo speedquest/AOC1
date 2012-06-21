@@ -17,6 +17,7 @@
 - (void)viewDidLoad
 {
     
+    
     UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];  //  Establishing the button style
     if (loginButton != nil)  // Checking that the button exists
     {
@@ -34,7 +35,7 @@
     {
         
         dateButton.frame = CGRectMake(10.0f, 170.0f, 100.0f, 40.0f);
-        dateButton.tintColor = [UIColor colorWithRed:0.451 green:0.635 blue:0.357 alpha:1]; /*#73a25b*/
+        dateButton.tintColor = [UIColor redColor]; 
         [dateButton setTitle:@"Date" forState:UIControlStateNormal];
         dateButton.tag = 1;
         [dateButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -52,20 +53,7 @@
         [infoButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:infoButton];  //  Adding the button to the view
     }
-    
-   //UIButton *customButton = [UIButton buttonWithType:UIButtonTypeCustom];
-   // if (customButton != nil)
-   // {
-     //   UIImage *normalImage = [UIImage imageNamed:@"DieselDad.jpg"];
-       // UIImage *highlightImage = [UIImage imageNamed:@"Diesel.jpg"];
-        //[customButton setImage:normalImage forState:UIControlStateNormal];
-        //[customButton setImage:highlightImage forState:UIControlStateHighlighted];
-        //customButton.frame = CGRectMake(100.0f, 150.0f, 200.0f, 300.0f);
-        //customButton.tintColor = [UIColor colorWithRed:0.451 green:0.635 blue:0.357 alpha:1]; /*#73a25b*/
-        
-        
-       // [self.view addSubview:customButton];  //  Adding the button to the view
-    //}
+
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -84,12 +72,15 @@
     }
     else if (button.tag == 1)
     {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Current Date" message:@"The DATE BUTTON works!" delegate:nil cancelButtonTitle:@"DONE" otherButtonTitles:nil];
-        
-        if (alertView != nil)
+        //  Creating the NSDate Object
+        NSDate *date = [NSDate date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        if (dateFormatter != nil)
         {
-            [alertView show];
+            [dateFormatter setDateFormat:@"MMMM dd', 'yyyy 'at' h:mm:ss a zzzz"];
         }
+        NSString *currentDate = [dateFormatter stringFromDate:date];
+        [self displayAlertWithString:currentDate];
     }
     else if (button.tag == 2)
     {
@@ -103,9 +94,24 @@
 }
 
 
+-(void)displayAlertWithString:(NSString *)stringAlert;
+{
+
+    UIAlertView *warning = [[UIAlertView alloc]
+                          initWithTitle:@"DATE"
+                          message:stringAlert
+                          delegate:nil
+                          cancelButtonTitle:@"Continue"
+                          otherButtonTitles:nil];
+    [warning show];
+}
+
+
 - (void)viewDidUnload
 {
 
+    [dateLabel release];
+    dateLabel = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -119,4 +125,8 @@
     }
 }
 
+- (void)dealloc {
+    [dateLabel release];
+    [super dealloc];
+}
 @end

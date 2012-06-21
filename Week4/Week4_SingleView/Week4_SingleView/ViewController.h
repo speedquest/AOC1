@@ -10,4 +10,13 @@
 
 @interface ViewController : UIViewController
 
+
+{
+   UILabel *dateLabel; 
+
+}
+
+- (void)displayAlertWithString:(NSString*)stringAlert;
+
+
 @end
