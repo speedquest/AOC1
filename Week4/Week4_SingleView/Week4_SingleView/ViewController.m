@@ -10,6 +10,10 @@
 
 @interface ViewController ()
 
+#define LOGIN_BUTTON 0
+#define DATE_BUTTON 1
+#define INFO_BUTTON 2
+
 @end
 
 @implementation ViewController
@@ -97,7 +101,7 @@
 //  onClick Function - When the buttons are clicked, determine which one, then perform an action
 -(void)onClick:(UIButton*)button
 {
-    if (button.tag == 0)  //  If button pressed is Login Button then do this...
+    if (button.tag == LOGIN_BUTTON)  //  If button pressed is Login Button then do this...
     {
         if (usernameText.text.length >= 1)  //  If there is data in the textfield then do this...
         {
@@ -117,7 +121,7 @@
 
         }
         
-    }else if (button.tag == 1)  //  If button pressed is Date Button then do this...
+    }else if (button.tag == DATE_BUTTON)  //  If button pressed is Date Button then do this...
         {
         //  Creating the NSDate Object
         NSDate *date = [NSDate date];  //  Declares the variable
@@ -130,7 +134,7 @@
         [self displayAlertWithString:currentDate];  // Display the Alert using the currentDate variable info
     
     //  INFO Button functionality        
-    }else if (button.tag == 2)  //  Info Button then do this...
+    }else if (button.tag == INFO_BUTTON)  //  Info Button then do this...
         {
             authorInfo.text = @"This application was created by: Nick Weil";
             authorInfo.textColor = [UIColor blueColor];
