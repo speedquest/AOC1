@@ -12,7 +12,10 @@
 
 
 {
-   UILabel *dateLabel; 
+    UITextField *usernameText;
+    UILabel *namePrompt;
+    UILabel *dateLabel;
+    UILabel *authorInfo;
 
 }
 
