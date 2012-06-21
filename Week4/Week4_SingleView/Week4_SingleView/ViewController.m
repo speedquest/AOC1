@@ -16,16 +16,44 @@
 
 - (void)viewDidLoad
 {
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    UILabel *usernameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 10.0f, 90.0f, 30.0f)];
+     
+    if (usernameLabel != nil)
+    {
+        usernameLabel.text = @"Username:";
+    }
+    [self.view addSubview:usernameLabel];
+    
+    usernameText = [[UITextField alloc] initWithFrame:CGRectMake(110.0f, 10.0f, 200.0f, 30.0f)];
+    if (usernameText != nil)
+    {
+        usernameText.borderStyle = UITextBorderStyleRoundedRect;
+        [self.view addSubview:usernameText];
+    }
+    
+    //  Creating the Username Prompt
+    namePrompt = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 90.0f, 300.0f, 40.0f)];  //  Create prompt and its size/shape
+    
+    if (namePrompt != nil)  //  If variable actually display then...
+    {
+        namePrompt.text = @"Please Enter Your Username";  //  Supply the variable with the text to be shown
+        namePrompt.backgroundColor = [UIColor colorWithRed:0.82 green:0.82 blue:0.82 alpha:1]; /*#d1d1d1*/
+        namePrompt.textAlignment = UITextAlignmentCenter;  // Center the text within the background
+    }
+    [self.view addSubview:namePrompt];  //  Display the view on top of the mainView
     
     
+    //  Create the Login Button and display it
     UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];  //  Establishing the button style
     if (loginButton != nil)  // Checking that the button exists
     {
-        loginButton.frame = CGRectMake(190.0f, 70.0f, 100.0f, 30.0f);  //  Locating the button and sizing it
+        loginButton.frame = CGRectMake(190.0f, 50.0f, 100.0f, 30.0f);  //  Locating the button and sizing it
         loginButton.tintColor = [UIColor colorWithRed:0.451 green:0.635 blue:0.357 alpha:1]; /*#73a25b*/  //Changes the button color while depressed
         [loginButton setTitle:@"Login" forState:UIControlStateNormal];  //  The NORMAL state of the button
         [loginButton setTitle:@"Logging In" forState:UIControlStateHighlighted];  // Changing button text while depressed
-        loginButton.tag = 0;
+        loginButton.tag = 0;  //  Assign this button to a value of 0 to enable different onClick event result
         [loginButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:loginButton];  //  Adding the button to the view
     }
@@ -36,8 +64,8 @@
         
         dateButton.frame = CGRectMake(10.0f, 170.0f, 100.0f, 40.0f);
         dateButton.tintColor = [UIColor redColor]; 
-        [dateButton setTitle:@"Date" forState:UIControlStateNormal];
-        dateButton.tag = 1;
+        [dateButton setTitle:@"Date" forState:UIControlStateNormal];  // NORMAL state
+        dateButton.tag = 1;  //  Assign this button to a value of 1 to enable different onClick event results
         [dateButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:dateButton];  //  Adding the button to the view
     }
@@ -47,50 +75,60 @@
     {
         
         //  infoButton.backgroundColor = [UIColor whiteColor];
-        infoButton.frame = CGRectMake(10.0f, 350.0f, 25.0f, 25.0f);
+        infoButton.frame = CGRectMake(10.0f, 300.0f, 25.0f, 25.0f);
         infoButton.tintColor = [UIColor colorWithRed:0.451 green:0.635 blue:0.357 alpha:1]; /*#73a25b*/
-        infoButton.tag = 2;
+        infoButton.tag = 2;  //  Assign this button to a value of 2 to enable different onClick event result
         [infoButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:infoButton];  //  Adding the button to the view
     }
+    authorInfo = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 330.0f, 300.0f, 50.0f)];
+    if (authorInfo != nil)
+    {
+        
+    }
+    [self.view addSubview:authorInfo];
 
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-
+//  onClick Function - When the buttons are clicked, determine which one, then perform an action
 -(void)onClick:(UIButton*)button
 {
     if (button.tag == 0)
-    {    
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"OUCH!" message:@"The LOGIN BUTTON works!" delegate:nil cancelButtonTitle:@"DONE" otherButtonTitles:nil];
-    
-        if (alertView != nil)
-        {
-            [alertView show];
-        }
-    }
-    else if (button.tag == 1)
     {
-        //  Creating the NSDate Object
-        NSDate *date = [NSDate date];
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        if (dateFormatter != nil)
+        if (usernameText.text.length >= 1)
         {
-            [dateFormatter setDateFormat:@"MMMM dd', 'yyyy 'at' h:mm:ss a zzzz"];
+            NSString *userInput =[[NSString alloc] initWithString:usernameText.text];
+            namePrompt.text = [NSString stringWithFormat:@"Username: '%@' has been logged in", userInput];
+            namePrompt.textColor = [UIColor whiteColor]; 
+            namePrompt.backgroundColor = [UIColor colorWithRed:0.451 green:0.635 blue:0.357 alpha:1]; /*#73a25b*/
+            namePrompt.numberOfLines = 3;
+        }else {
+            namePrompt.text =@"Username cannot be empty";
+            namePrompt.textColor = [UIColor whiteColor];
+            namePrompt.backgroundColor = [UIColor redColor];
         }
-        NSString *currentDate = [dateFormatter stringFromDate:date];
-        [self displayAlertWithString:currentDate];
-    }
-    else if (button.tag == 2)
-    {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"OUCH!" message:@"The INFO BUTTON works!" delegate:nil cancelButtonTitle:@"DONE" otherButtonTitles:nil];
         
-        if (alertView != nil)
+    }else if (button.tag == 1)  //  Date Button then do this...
         {
-            [alertView show];
+        //  Creating the NSDate Object
+        NSDate *date = [NSDate date];  //  Declares the variable
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];  //  Formats the variable
+        if (dateFormatter != nil)  //  If the variable exists, then do this...
+        {
+            [dateFormatter setDateFormat:@"MMMM dd', 'yyyy 'at' h:mm:ss a zzzz"];  //  Sets the format specifically
         }
-    }
+        NSString *currentDate = [dateFormatter stringFromDate:date];  //  Make currentDate = newly formatted date variable
+        [self displayAlertWithString:currentDate];  // Display the Alert using the currentDate variable info
+    }else if (button.tag == 2)  //  Info Button then do this...
+        {
+            authorInfo.text = @"This application was created by: Nick Weil";
+            authorInfo.textColor = [UIColor blueColor];
+            authorInfo.backgroundColor = [UIColor colorWithRed:0.82 green:0.82 blue:0.82 alpha:1]; /*#d1d1d1*/
+            authorInfo.numberOfLines = 2;
+            authorInfo.textAlignment = UITextAlignmentCenter;
+        }
 }
 
 
